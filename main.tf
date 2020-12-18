@@ -68,7 +68,7 @@ module "engineering_compute_policy" {
 
 // CREATE CLUSTERS
 module "databricks_engineering_cluster" {
-  source = "./modules/6.dbx-cluster"
+  source = "./modules/5.dbx-cluster"
   workspace_id = module.base_workspace.workspace_id
   group_name = module.engineering_group.group_name
   pool_id = module.engineering_pool.pool_id
@@ -76,7 +76,7 @@ module "databricks_engineering_cluster" {
 }
 
 module "databricks_marketing_cluster" {
-  source = "./modules/6.dbx-cluster"
+  source = "./modules/5.dbx-cluster"
   workspace_id = module.base_workspace.workspace_id
   group_name = module.marketing_group.group_name
   pool_id = module.marketing_pool.pool_id

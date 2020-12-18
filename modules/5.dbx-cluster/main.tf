@@ -11,6 +11,9 @@ provider "databricks" {
   azure_workspace_resource_id = var.workspace_id
 }
 
+// note: When you change the cluster configuration,
+// make sure they adhere to the policy defined in 3.dbx-cluster-policies
+// else you will get a policy validation error.
 resource "databricks_cluster" "shared_autoscaling" {
   cluster_name            = format("%s_cluster", var.group_name)
   spark_version           = "7.3.x-scala2.12"
